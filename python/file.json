@@ -1,4 +1,4 @@
-export const jsonData = [
+[
     {
         "id": 10,
         "title": "Introdução",
@@ -47,4 +47,4 @@ export const jsonData = [
             }
         ]
     }
-];
+]
