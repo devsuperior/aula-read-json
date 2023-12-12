@@ -1,0 +1,52 @@
+# IntelliJ IDEA
+.idea/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# NetBeans
+nb-configuration.xml
+
+# Visual Studio Code
+.vscode/
+
+# Compiled class files
+target/
+bin/
+out/
+
+# Maven
+log/
+target/
+release.properties
+
+# Gradle
+build/
+.gradle/
+*.iml
+
+# Spring Boot
+*.log
+logs/
+spring-configuration-metadata.json
+target/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
+*.swp
+
+# Package files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
