@@ -7,17 +7,16 @@ public class Lesson {
     private Long id;
     private String title;
     private String media;
-    // private Instant timestamp;
+    private Instant timestamp;
 
     public Lesson() {
     }
 
-    // public Lesson(Long id, String title, String media, Instant timestamp) {
-    public Lesson(Long id, String title, String media) {
+    public Lesson(Long id, String title, String media, Instant timestamp) {
         this.id = id;
         this.title = title;
         this.media = media;
-        // this.timestamp = timestamp;
+        this.timestamp = timestamp;
     }
 
     public Long getId() {
@@ -44,17 +43,16 @@ public class Lesson {
         this.media = media;
     }
 
-    // public Instant getTimestamp() {
-    //     return timestamp;
-    // }
+    public Instant getTimestamp() {
+        return timestamp;
+    }
 
-    // public void setTimestamp(Instant timestamp) {
-    //     this.timestamp = timestamp;
-    // }
+    public void setTimestamp(Instant timestamp) {
+        this.timestamp = timestamp;
+    }
 
     @Override
     public String toString() {
-        // return "Lesson [id=" + id + ", title=" + title + ", media=" + media + ", timestamp=" + timestamp + "]";
-        return "Lesson [id=" + id + ", title=" + title + ", media=" + media + "]";
+        return "Lesson [id=" + id + ", title=" + title + ", media=" + media + ", timestamp=" + timestamp + "]";
     }
 }
