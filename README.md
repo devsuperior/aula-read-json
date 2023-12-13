@@ -3,12 +3,61 @@
 ## Objective
 The objective of this project is to demonstrate how to read a JSON file in text mode and navigate through its objects. The implementation is provided in the following programming languages: JavaScript (js), Python, Java, and C#.
 
+## Steps
 
-## Requirements
+### JavaScript
+
+Para o JS utilizamos o ``export`` para exportar o conteúdo do jsonData como um módulo. Neste caso, usamos a sintaxe da ECMAScript Modules (ESM).
+
+```javascript
+// file.json
+export const jsonData = [
+    ...
+];
+
+// read-file.json
+import { jsonData } from "./file.js";
+```
+
+### Python
+
+Ocorreram alguns problemas utilizando a lib ``datetime`` do Python na leitura do valor do timestamp no formato UTC (ISO 8601 format). 
+
+```python
+ValueError: Invalid isoformat string: '2023-12-06T16:34:56Z'
+```
+- *method doesn't directly support the 'Z' notation for Zulu time (UTC)*.
+
+
+Para lidar com este erro, é necessário utilizar a lib ``python-dateutil``. Para isso, é necessário seguir os passos abaixo para instalar o mesmo
+
+```bash
+pip install python-dateutil
+```
+
+Em seguida, no código é necessário utilizar a função abaixo:
+
+```python
+from dateutil import parser
+
+# Function to parse the timestamp into a datetime object
+def parse_timestamp(timestamp):
+    return parser.isoparse(timestamp)
+
+for course in jsonData:
+    print(f"Curso: {course['title']}")
+
+    for lesson in course['lessons']:
+        print(f"  Aula {lesson['id']}: {lesson['title']}")
+        print(f"    Media: {lesson['media']}")
+        print(f"    Timestamp: {parse_timestamp(lesson['timestamp'])}")
+
+    print()
+```
 
 ### Java
 
-#### Lidar com campo do tipo timestamp
+####  Lidar com campo do tipo timestamp
 
 A lib do ```Jackson``` não está configurado para lidar com tipos de data/hora do Java 8 (java.time.Instant) por padrão, para corrigir, seguir os passos abaixo:
 
@@ -46,7 +95,7 @@ List<Course> courses = objectMapper.readValue(jsonFile, new TypeReference<List<C
 #### Adicionar a lib Newtonsoft.Json
 Para adicionar a lib ```Newtonsoft.Json``` usando o NuGet Package Manager ou o dotnet CLI:
     
-```
+```bash
 dotnet add package Newtonsoft.Json
 ```
 
