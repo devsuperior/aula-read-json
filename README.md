@@ -57,6 +57,16 @@ for course in jsonData:
 
 ### Java
 
+#### Adicionar dependência do Jackson ao projeto
+
+```xml
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.13.0</version>
+</dependency>
+```
+
 ####  Lidar com campo do tipo timestamp
 
 A lib do ```Jackson``` não está configurado para lidar com tipos de data/hora do Java 8 (java.time.Instant) por padrão, para corrigir, seguir os passos abaixo:
